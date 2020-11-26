@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ q }} - Search Results
+{% endblock %}
+
+{% block body %}
+    <h1>Search Results</h1>
+    The page <a{{ q }}>"{{ q }}"</a> does not exist. You can ask for it to be created, but consider checking the search results below to see whether the topic is already covered.
+    <ul>
+        {% for entry in entries %}
+            <li>
+                <a href="{{ entry }}">{{ entry }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
