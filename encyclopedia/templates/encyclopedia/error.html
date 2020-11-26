@@ -5,6 +5,16 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Page not found.</h1>
+    <div class="m-5">
+        {% if title %}
+            <h1>{{ title }}</h1>
+        {% endif %}
+
+        {{ msg }}
+
+        {% if entry %}
+            You can visit page <a href="{% url 'entry' entry%}">here.</a>
+        {% endif %}
+    </div>
 
 {% endblock %}
